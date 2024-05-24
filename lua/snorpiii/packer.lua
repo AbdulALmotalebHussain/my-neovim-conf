@@ -8,7 +8,11 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   use {
+<<<<<<< HEAD
 	 'nvim-telescope/telescope.nvim',
+=======
+	  'nvim-telescope/telescope.nvim',
+>>>>>>> 9ae1f8d231d99a14248b3bf184f5c97a01a64c8f
 	  -- or                            , branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} },
   }
