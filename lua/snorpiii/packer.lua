@@ -8,16 +8,16 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.0',
+	 'nvim-telescope/telescope.nvim',
 	  -- or                            , branch = '0.1.x',
-	  requires = { {'nvim-lua/plenary.nvim'} }
+	  requires = { {'nvim-lua/plenary.nvim'} },
   }
 
   use({
 	  'rose-pine/neovim',
 	  as = 'rose-pine',
 	  config = function()
-		  vim.cmd('colorscheme rose-pine')
+		  vim.cmd('colorscheme rose-pine-moon')
 	  end
   })
 
@@ -32,6 +32,7 @@ return require('packer').startup(function(use)
           }
       end
   })
+
 
 
   use({"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"})
@@ -64,9 +65,18 @@ return require('packer').startup(function(use)
 		  {'rafamadriz/friendly-snippets'},
 	  }
   }
-
+ -- use ("github/copilot.vim")
   use("folke/zen-mode.nvim")
-  use("github/copilot.vim")
+use {
+    'zbirenbaum/copilot-cmp',
+    requires = {
+      'zbirenbaum/copilot.lua'
+    },
+    config = function()
+      require("copilot_cmp").setup()
+    end
+  }
+
   use("eandrju/cellular-automaton.nvim")
   use("laytan/cloak.nvim")
 
